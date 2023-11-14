@@ -24,9 +24,9 @@ export const getHelp = [{ id: 1, link: '#faqs', title: 'FAQ' }];
 export const blogPosts = [
   {
     icon: <VscCode />,
-    title: 'Your First Blog Post',
+    title: 'Best practice with node.js',
     content:
-      'This is the content of your first blog post. Write something interesting here This is the content of your first blog post. Write something interesting here.',
+      'In this blog post,I will explore best practices for backend file management with node.js',
     date: '2023-11-11',
     tags: ['Programming', 'Web Development'],
   },
