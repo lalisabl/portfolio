@@ -1,52 +1,89 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './contact.css';
-import axios from 'axios';
 import contacts from './data';
 
 const Contact = () => {
-  const [feedback, setFeedback] = useState({});
-  const [showPopup, setShowPopup] = useState(false);
-  const [popUpContent, setPopupContent] = useState('');
-  const handleInputChange = (e) => {
-    setFeedback({
-      ...feedback,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const handleSubmit = (e) => {
+  const form = useRef();
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = async (e) => {
     e.preventDefault();
-    axios
-      .post('http://127.0.0.1:3001/api/v1/feedback', feedback)
-      .then((res) => {
-        setShowPopup(true);
-        setPopupContent(
-          `Success! Your message has been received,${res.data.data.userName}`,
-        );
-        setFeedback({});
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
-  };
-  useEffect(() => {
-    let timeout;
-    if (showPopup) {
-      timeout = setTimeout(() => {
-        setShowPopup(false);
-        setPopupContent('');
-        setFeedback({});
+
+    const formData = new FormData(form.current);
+    let isValid = true;
+    formData.forEach((value) => {
+      if (!value.trim()) {
+        isValid = false;
+      }
+    });
+
+    setLoading(true);
+
+    if (!isValid) {
+      setLoading(false);
+      setTimeout(() => {
+        setSuccessMessage(null);
+        setErrorMessage(null);
       }, 2000);
+      setErrorMessage('Error sending message. Please try again.');
+      return;
     }
 
-    return () => clearTimeout(timeout);
-  }, [showPopup]);
+    try {
+      const result = await emailjs.sendForm(
+        'service_jm8203h',
+        'template_9dqmhob',
+        form.current,
+        'hmug2Pzn1clcaiMoz',
+      );
+
+      setSuccessMessage('Message sent successfully!');
+      console.log(result.text);
+      form.current.reset();
+    } catch (error) {
+      setErrorMessage('Error sending message. Please try again.');
+      console.error(error.text);
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        setSuccessMessage(null);
+        setErrorMessage(null);
+      }, 2000);
+    }
+  };
+
   return (
     <section id="contact">
       <h2>Get In touch </h2>
       <div className="container contact__container">
+        <div className="contact__message">
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="form__section">
+              <label>Name</label>
+              <br />
+              <input className="take__input" type="text" name="user_name" />
+              <label>Email</label>
+              <br />
+              <input className="take__input" type="email" name="user_email" />
+              <label>Message</label>
+              <br />
+              <textarea className="take__input" name="message" />
+              <input className="btn primary sbmt" type="submit" value="Send" />
+            </div>
+          </form>
+          {loading && <p>Loading...</p>}
+          {successMessage && (
+            <p className="msg success-message">{successMessage}</p>
+          )}
+          {errorMessage && <p className="msg error-message">{errorMessage}</p>}
+        </div>
         <div className="contact__socials">
-          <p>shoot me a message via any of the links below</p>
+          <p>Let's Stay Connected</p>
           <div className="contact__links">
             {contacts.map((contact) => (
               <a key={contact.id} href={contact.link} target="blank">
@@ -55,57 +92,9 @@ const Contact = () => {
             ))}
           </div>
         </div>
-
-        <div className="contact__message">
-          <form>
-            <div className="form__section">
-              <label>Name</label>
-              <br />
-              <input
-                onChange={handleInputChange}
-                type="text"
-                name="userName"
-                required
-                className="take__input"
-              />
-            </div>
-            <div className="form__section">
-              <label>Email</label>
-              <br />
-              <input
-                onChange={handleInputChange}
-                type="text"
-                name="email"
-                required
-                className="take__input"
-              />
-            </div>
-            <div className="form__section">
-              <label>Message</label>
-              <br />
-              <textarea
-                onChange={handleInputChange}
-                type="text"
-                name="message"
-                required
-                className="take__input"
-                width="320px"
-              />
-            </div>
-            <div className="success__message">
-              {showPopup && <p>{popUpContent}</p>}
-            </div>
-            <button
-              onClick={handleSubmit}
-              type="submit"
-              className="btn primary"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
       </div>
     </section>
   );
 };
+
 export default Contact;

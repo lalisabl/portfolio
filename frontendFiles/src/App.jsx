@@ -4,7 +4,7 @@ import Header from './sections/header/header';
 import About from './sections/about/About';
 import Services from './sections/services/Services';
 import Portfolio from './sections/projects/portfolio';
-import FAQs from './sections/faqs/faqs';
+import FAQs from './sections/skills/skills';
 import Contact from './sections/contact/contact';
 import Footer from './sections/footer/footer';
 import FloatingNav from './sections/floating-nav/floatingNav';

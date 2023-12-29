@@ -17,28 +17,6 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="footer__items get-help">
-          <h3>Get help</h3>
-          <p>
-            {getHelp.map((item) => (
-              <a href={item.link} key={item.id}>
-                {item.title}
-              </a>
-            ))}
-          </p>
-        </div>
-        <div className="footer__items blogs">
-          <h3>Blog Posts</h3>
-          {blogPosts.map((blog) => (
-            <Card key={blog.id} className="blog primary">
-              <div className="blog__details">
-                <h4>{blog.title}</h4>
-                <p>{blog.content}</p>
-                <p>{blog.date}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
         <div className="footer__items footer__follow">
           <h3>Follow me</h3>
           <div className="footer__socials">

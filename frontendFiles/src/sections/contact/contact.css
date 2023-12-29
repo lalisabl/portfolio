@@ -1,19 +1,32 @@
+.contact__container {
+  display: flex;
+  gap: 16rem;
+  margin-top: 2rem;
+  align-items: end;
+}
+.contact__socials {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact__socials p {
+  font-size: 4rem;
+}
 .contact__links {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
 }
-.contact__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 20rem;
-  place-items: center;
+
+.sbmt {
+  transition: var(--transition);
   margin-top: 2rem;
 }
 .contact__container a {
-  width: 4rem;
+  width: 5rem;
   background: var(--color-primary);
-  font-size: 2rem;
+  font-size: 3rem;
   border-radius: var(--border-radius-1);
   aspect-ratio: 1/1;
   color: white;
@@ -28,27 +41,35 @@
   transform: translateY(-0.5rem);
 }
 .form__section {
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
   text-align: start;
 }
 .take__input {
+  display: block;
   width: 32rem;
   padding: 1rem 2rem;
+  margin: 1rem 0;
 }
-.success__message {
-  font-size: 2rem;
+.msg {
+  color: var(--color-primary);
 }
 /* MEDIA QUERIES (phones) */
 @media screen and (max-width: 1024px) {
   .contact__container {
-    column-gap: 10rem;
+    flex-direction: column;
+    gap: 2rem;
     margin-top: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact__socials {
+    width: 100%;
+    gap: 2rem;
+    padding: 0 1rem;
   }
 }
 @media screen and (max-width: 600px) {
   .contact__container {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
     margin-top: 1rem;
   }
   .contact__links {
@@ -56,5 +77,6 @@
   }
   .contact__socials p {
     margin: 0.5rem auto 2rem;
+    font-size: 3rem;
   }
 }
