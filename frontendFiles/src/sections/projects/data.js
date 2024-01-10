@@ -3,8 +3,6 @@ import Image2 from '../../assets/images/portifolio.png';
 import Image3 from '../../assets/images/accountDetailBookStore.png';
 import Image4 from '../../assets/images/landingPageBookStore.png';
 import Image5 from '../../assets/images/adminPage.png';
-import Image6 from '../../assets/images/mobApp.jpg';
-
 const data = [
   {
     id: 1,
