@@ -42,7 +42,6 @@ function App() {
       <About />
       <Services />
       <Portfolio />
-      <FAQs />
       <Contact />
       <Footer />
       {isFloatingNavVisible && <FloatingNav />}

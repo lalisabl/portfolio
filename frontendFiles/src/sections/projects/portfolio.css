@@ -33,7 +33,6 @@
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
-
 /* MEDIA QUERIES (tablets) */
 @media screen and (max-width: 1024px) {
   .portfolio__projects {
@@ -41,7 +40,6 @@
     gap: 2rem;
   }
 }
-
 /* MEDIA QUERIES (phones) */
 @media screen and (max-width: 600px) {
   .portfolio__categories {

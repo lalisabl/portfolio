@@ -1,5 +1,5 @@
 import { links, socials, getHelp, blogPosts } from './data';
-import myphoto from '../../assets/images/anonymous_person.png';
+import myphoto from '../../assets/images/LLogo.png';
 import './footer.css';
 import Card from '../../components/Card';
 

@@ -20,7 +20,7 @@ const data = [
     image: Image3,
     title: 'Hayu Bk',
     desc: 'Store and provide different categories of books',
-    github: 'https://github.com',
+    github: 'https://github.com/lalisabl',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const data = [
     image: Image4,
     title: 'Hayu Bk',
     desc: 'Response, interactive  and easly accessible   ',
-    github: 'https://github.com',
+    github: 'https://github.com/lalisabl',
   },
   {
     id: 4,
@@ -36,16 +36,16 @@ const data = [
     image: Image5,
     title: 'e-cosmetics',
     desc: 'Processing, dynamic, and scalable for online shopping',
-    github: 'https://github.com',
-  },
-  {
-    id: 5,
-    category: 'Mobile Application',
-    image: Image6,
-    title: 'ExamStore for Fresh University students ',
-    desc: 'Helps fresh university students to get previous year exam with their answers',
     github: 'https://github.com/lalisabl',
   },
+  // {
+  //   id: 5,
+  //   category: 'Mobile Application',
+  //   image: Image6,
+  //   title: 'ExamStore for Fresh University students ',
+  //   desc: 'Helps fresh university students to get previous year exam with their answers',
+  //   github: 'https://github.com/lalisabl',
+  // },
 ];
 
 export default data;

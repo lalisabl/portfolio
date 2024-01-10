@@ -13,29 +13,12 @@ export const links = [
   { id: 3, link: '#services', title: 'Services' },
 ];
 export const socials = [
-  { id: 1, link: 'https://instagram.com', icon: <AiOutlineInstagram /> },
-  { id: 2, link: 'https://twitter.com', icon: <AiOutlineTwitter /> },
-  { id: 3, link: 'https://linkedin.com', icon: <BsLinkedin /> },
-  { id: 4, link: 'https://github.com', icon: <AiFillGithub /> },
-];
-export const getHelp = [{ id: 1, link: '#faqs', title: 'FAQ' }];
-// Assuming each blog post has the following properties: title, content, date, and tags
-
-export const blogPosts = [
   {
-    icon: <VscCode />,
-    title: 'Best practice with node.js',
-    content:
-      'In this blog post,I will explore best practices for backend file management with node.js',
-    date: '2023-11-11',
-    tags: ['Programming', 'Web Development'],
+    id: 1,
+    link: 'https://instagram.com/lalisabula',
+    icon: <AiOutlineInstagram />,
   },
-  {
-    icon: <TbDeviceIpadHorizontalCode />,
-    title: 'Tips for Effective Coding',
-    content:
-      "In this blog post, we'll explore some tips for writing clean and efficient code.",
-    date: '2023-11-12',
-    tags: ['Coding', 'Best Practices'],
-  },
+  { id: 2, link: 'https://twitter.com/lalisyntax', icon: <AiOutlineTwitter /> },
+  { id: 3, link: 'https://linkedin.com/lalisa-bula', icon: <BsLinkedin /> },
+  { id: 4, link: 'https://github.com/lalisabl', icon: <AiFillGithub /> },
 ];
