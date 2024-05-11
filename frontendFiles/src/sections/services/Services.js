@@ -35,7 +35,7 @@ const Services = () => {
                   <FaLaptopCode/>
                 </div>
                 <div>
-                  <h3>Your Professional <br/>Website</h3>
+                  <h3>Your Professional Website</h3>
                   <p>Get your website done by a trained professional with plenty of project experience!</p>
                 </div>
               </div>

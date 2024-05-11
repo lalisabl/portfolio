@@ -1,6 +1,6 @@
 .s-container {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
 }
 
 .flip-btn {
@@ -39,8 +39,6 @@
   height: 6rem;
 }
 .front-el h3{
-  font-size: calc(140% + .1vh + .1vw);
-    line-height: 1.2;
     font-family: "Lato", sans-serif;
   background-color: #d77a65;
   color: #fcfbfa;
@@ -50,4 +48,5 @@
 }
 .front-el p{
   margin-bottom: 1rem;
+  text-align: start;
 }
