@@ -1,39 +1,53 @@
-.services__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 4rem;
+.s-container {
+  display: flex;
+  gap: 4rem;
 }
-.service__icon {
-  background: var(--color-primary);
-  padding: 0.6rem;
-  border-radius: var(--border-radius-3);
-  font-size: 1.5rem;
-  color: var(--color-white);
-  transition: var(--transition);
+
+.flip-btn {
+  display: flex;
 }
-.service__details {
-  margin-top: 1rem;
-}
-.service:hover .service__icon {
+.flip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  /* width: 400px; */
+  height: 50rem;
+  padding: 20px;
   background: var(--color-light);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.front-el {
+  display: flex;
+  gap: 2rem;
+}
+
+.react-card-flip {
+  transition: transform 0.5s;
+}
+
+.react-card-flip.is-flipped {
+  transform: rotateY(180deg);
+}
+.icon{
+  font-size: 6rem;
   color: var(--color-primary);
+  width: 6rem;
+  height: 6rem;
 }
-.service h4 {
-  margin-bottom: 0.7rem;
+.front-el h3{
+  font-size: calc(140% + .1vh + .1vw);
+    line-height: 1.2;
+    font-family: "Lato", sans-serif;
+  background-color: #d77a65;
+  color: #fcfbfa;
+  font-weight: 700;
+  padding: 5px 5px 3px;
+  margin-top: 15px;
 }
-@media screen and (max-width: 1024px) {
-  .services__container {
-    gap: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .services__container {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-
-  .card.service {
-    gap: 1.2rem;
-  }
+.front-el p{
+  margin-bottom: 1rem;
 }

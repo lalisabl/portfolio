@@ -1,4 +1,4 @@
-import { links, socials, getHelp, blogPosts } from './data';
+import { links, socials} from './data';
 import myphoto from '../../assets/images/LLogo.png';
 import './footer.css';
 import Card from '../../components/Card';
