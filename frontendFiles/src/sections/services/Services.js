@@ -92,8 +92,7 @@ const Services = () => {
   <li><FaLinux className='icon'/></li>
   <li><IoIosMore className='icon'/></li>
 </ul>
-
-            </div>
+ </div>
           </ReactCardFlip>
         </div>
         <div className="services-right">
@@ -133,7 +132,7 @@ const Services = () => {
           </ul>
          </div>
           <div>    
-          <p className='special'>Do you have any additional special requirements? No problem, let`&apos;`s talk!
+          <p className='special'>Do you have any additional special requirements? No problem, let&apos;s talk!
           </p>
             <button className='btn primary'>Contact</button>
           </div>
