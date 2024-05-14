@@ -4,7 +4,7 @@ import Header from './sections/header/header';
 import About from './sections/about/About';
 import Services from './sections/services/Services';
 import Portfolio from './sections/projects/portfolio';
-import FAQs from './sections/skills/skills';
+import Demo from './sections/projects/demo';
 import Contact from './sections/contact/contact';
 import Footer from './sections/footer/footer';
 import FloatingNav from './sections/floating-nav/floatingNav';
@@ -41,7 +41,7 @@ function App() {
       <Header />
       <About />
       <Services />
-      <Portfolio />
+      <Demo />
       <Contact />
       <Footer />
       {isFloatingNavVisible && <FloatingNav />}
