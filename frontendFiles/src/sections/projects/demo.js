@@ -4,7 +4,7 @@ import "./demo.css"; // Assuming this file contains your CSS styles
 
 const Demo = () => {
   return (
-    <section id="project">
+    <section id="projects">
       <h2>Projects</h2>
       {data.map(project => (
         <div key={project.id} className="container project-container">
@@ -17,7 +17,7 @@ const Demo = () => {
   {project.techUsed.map((tech, techIndex) => (
     <li className='icons'>{tech}</li>
   ))}
-</ul>
+      </ul>
             <p className='desc'>{project.desc3}</p>
             <a href={project.github} className="btn primary">GitHub Link</a>
           </div>

@@ -42,8 +42,8 @@ function about() {
             <br />
             To explore more about me feel free to download my CV below
           </p>
-          <a href={CV} download className="btn primary">
-            Download CV <HiDownload />
+          <a href="#projects" className="btn primary">
+            My Works
           </a>
         </div>
       </div>
